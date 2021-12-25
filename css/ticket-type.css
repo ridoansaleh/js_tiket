@@ -1,0 +1,21 @@
+.ticket-type-container,
+.tt-right {
+  display: flex;
+}
+
+.ticket-type-container {
+  justify-content: space-between;
+}
+
+.tt-icon-wrapper {
+  margin: 10px;
+  border: 1px solid grey;
+  border-radius: 4px;
+  height: 60px;
+  padding: 5px;
+}
+
+.tt-icon {
+  height: 60px;
+  width: 60px;
+}

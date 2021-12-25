@@ -1,0 +1,82 @@
+.td-col-data {
+  display: flex;
+  flex-direction: column;
+}
+
+.td-table {
+  width: 100%;
+}
+
+.td-col-value {
+  position: relative;
+  padding: 12px 0;
+}
+
+.custom-select {
+  width: 400px;
+  display: none;
+  position: absolute;
+  /* right: 0; */
+  left: 0;
+  bottom: -180px;
+  z-index: 1;
+  background-color: #fff;
+  border: 1px solid #8e8888;
+}
+
+.cs-placeholder {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid #8e8888;
+}
+
+.cs-placeholder > i {
+  cursor: pointer;
+}
+
+.cs-options-container {
+  padding: 8px;
+}
+
+.cs-options-container > ul {
+  padding-left: 20px;
+}
+
+.cs-options-container > ul > li {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  padding-right: 20px;
+}
+
+.cs-options-container > ul > li {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+}
+
+.cs-options-container > ul > li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.cs-option-airport-city {
+  display: flex;
+}
+
+.cs-option-airport-city > div {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.cs-airport-code {
+  background-color: #8e8888;
+  color: #e7e3e3;
+  height: 20px;
+  line-height: 20px;
+  width: 70px;
+  padding: 4px;
+  border-radius: 4px;
+  text-align: center;
+}

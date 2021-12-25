@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tiket</title>
+    <link rel="stylesheet" href="./fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/ticket-type.css" />
+    <link rel="stylesheet" href="./css/sub-heading.css" />
+    <link rel="stylesheet" href="./css/ticket-detail.css" />
+    <link rel="stylesheet" href="./css/ticket-footer.css" />
+  </head>
+  <body>
+    <div class="box">
+      <div class="ticket-type-container">
+        <div class="tt-left">
+          <h4>Hey, kamu</h4>
+          <h2>Mau ke mana?</h2>
+        </div>
+        <div class="tt-right">
+          <div class="tt-icon-wrapper">
+            <img src="./images/airplane.png" class="tt-icon" />
+          </div>
+          <div class="tt-icon-wrapper">
+            <img src="./images/hotel.png" class="tt-icon" />
+          </div>
+          <div class="tt-icon-wrapper">
+            <img src="./images/to-do-list.png" class="tt-icon" />
+          </div>
+          <div class="tt-icon-wrapper">
+            <img src="./images/train.png" class="tt-icon" />
+          </div>
+          <div class="tt-icon-wrapper">
+            <img src="./images/car.png" class="tt-icon" />
+          </div>
+          <div class="tt-icon-wrapper">
+            <img src="./images/planner.png" class="tt-icon" />
+          </div>
+        </div>
+      </div>
+
+      <div class="subheading-container">
+        <div class="sh-top">
+          <div class="sh-top-left">
+            <img src="./images/plane.png" class="sh-label-icon" />
+            <h2 class="sh-label">
+              Cari harga tiket pesawat murah & promo di sini
+            </h2>
+          </div>
+          <a href="#"
+            >Pencarian Terakhir <i class="fas fa-chevron-right"></i
+          ></a>
+        </div>
+        <div class="sh-bottom">
+          <label>
+            <input type="radio" name="travel-type" value="Sekali Jalan" />
+            Sekali Jalan
+          </label>
+          <label>
+            <input type="radio" name="travel-type" value="Pulang-Pergi" />
+            Pulang-Pergi
+          </label>
+        </div>
+      </div>
+
+      <div class="ticket-detail-container">
+        <table class="td-table">
+          <tr>
+            <td>
+              <div class="td-col-data">
+                <span>Dari</span>
+                <div id="departure-airport" class="td-col-value">
+                  <i class="fas fa-plane-departure"></i>
+                  Sultan Mahmud Badaruddin II (PLM)
+                  <!------------------------ START: CUSTOM SELECT -->
+                  <div id="departure-select" class="custom-select">
+                    <div class="cs-placeholder">
+                      <span>Pilih kota atau bandara</span>
+                      <i
+                        class="fas fa-times"
+                        onclick="closeDepartureModal(event)"
+                      ></i>
+                    </div>
+                    <div class="cs-options-container">
+                      <span class="cs-option-category">Populer</span>
+                      <ul>
+                        <li>
+                          <div class="cs-option-airport-city">
+                            <i class="fas fa-city"></i>
+                            <div>
+                              <b>Jakarta, Indonesia</b>
+                              <span>Jakarta</span>
+                            </div>
+                          </div>
+                          <span class="cs-airport-code">JKTC</span>
+                        </li>
+                        <li>
+                          <div class="cs-option-airport-city">
+                            <i class="fas fa-city"></i>
+                            <div>
+                              <b>Surabaya, Indonesia</b>
+                              <span>Surabaya</span>
+                            </div>
+                          </div>
+                          <span class="cs-airport-code">SUBC</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <!------------------------ END: CUSTOM SELECT -->
+                </div>
+              </div>
+            </td>
+            <td>
+              <div class="td-col-data">
+                <span>Ke</span>
+                <div class="td-col-value">
+                  <i class="fas fa-plane-arrival"></i>
+                  Kuala Namu (KNO)
+                </div>
+              </div>
+            </td>
+            <td>
+              <div class="td-col-data">
+                <span>Berangkat</span>
+                <div class="td-col-value">
+                  <i class="fas fa-calendar-alt"></i>
+                  Sabtu, 18 Des 2021
+                </div>
+              </div>
+            </td>
+            <td>
+              <div class="td-col-data">
+                <label>
+                  <input type="checkbox" name="gohome" value="Go home" />
+                  Pulang
+                </label>
+                <!-- <span>Pulang</span> -->
+                <div class="td-col-value">
+                  <i class="fas fa-calendar-alt"></i>
+                  Min, 19 Des 2021
+                </div>
+              </div>
+            </td>
+            <td>
+              <div class="td-col-data">
+                <span>Penumpang & Kelas Kabin</span>
+                <div class="td-col-value">
+                  1 penumpang, Ekonomi
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <script src="./index.js"></script>
+    </div>
+  </body>
+</html>

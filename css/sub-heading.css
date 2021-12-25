@@ -1,0 +1,25 @@
+.subheading-container {
+  padding: 20px 0;
+}
+
+.sh-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sh-top-left {
+  display: flex;
+}
+
+.sh-label-icon {
+  height: 24px;
+  width: 24px;
+}
+
+.sh-label {
+  margin: 0 12px;
+}
+
+.sh-bottom {
+  padding: 20px 0;
+}
