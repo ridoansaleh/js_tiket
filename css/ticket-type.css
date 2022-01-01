@@ -5,6 +5,10 @@
 
 .ticket-type-container {
   justify-content: space-between;
+  padding: 18px 48px;
+  background-color: #f6f9ff;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 
 .tt-icon-wrapper {

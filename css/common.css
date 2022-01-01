@@ -1,5 +1,6 @@
 .box {
-  padding: 10px;
-  border: 1px solid blueviolet;
-  min-height: 120px;
+  width: 1180px;
+  border-radius: 8px;
+  margin: auto;
+  box-shadow: 5px 5px 50px 5px #8e8888;
 }

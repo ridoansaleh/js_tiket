@@ -1,0 +1,15 @@
+.ticket-footer-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 48px;
+}
+
+.tf-left {
+  display: flex;
+  flex-direction: column;
+}
+
+#tf-flexi-desc {
+  margin-top: 5px;
+  margin-left: 22px;
+}

@@ -5,6 +5,42 @@
 
 .td-table {
   width: 100%;
+  border-top: 1px solid #8e8888;
+  border-bottom: 1px solid #8e8888;
+}
+
+.td-table td:not(:last-child) {
+  border-right: 1px solid #8e8888;
+  padding: 10px;
+}
+
+.td-table td:first-child {
+  padding-left: 48px;
+  position: relative;
+}
+
+.td-table td:nth-child(2) {
+  padding-left: 38px;
+}
+
+.td-table td:last-child {
+  padding: 10px 48px 10px 10px;
+}
+
+#exchange-wrapper {
+  border: 1px solid #8e8888;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: -15px;
+  top: 25px;
+  z-index: 1;
+  background-color: #fff;
+  cursor: pointer;
 }
 
 .td-col-value {
