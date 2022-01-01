@@ -113,9 +113,45 @@
             <td>
               <div class="td-col-data">
                 <span>Ke</span>
-                <div class="td-col-value">
+                <div id="arrival-airport" class="td-col-value">
                   <i class="fas fa-plane-arrival"></i>
                   Kuala Namu (KNO)
+                  <!------------------------ START: CUSTOM SELECT -->
+                  <div id="arrival-select" class="custom-select">
+                    <div class="cs-placeholder">
+                      <span>Pilih kota atau bandara</span>
+                      <i
+                        class="fas fa-times"
+                        onclick="closeArrivalModal(event)"
+                      ></i>
+                    </div>
+                    <div class="cs-options-container">
+                      <span class="cs-option-category">Populer</span>
+                      <ul>
+                        <li>
+                          <div class="cs-option-airport-city">
+                            <i class="fas fa-city"></i>
+                            <div>
+                              <b>Jakarta, Indonesia</b>
+                              <span>Jakarta</span>
+                            </div>
+                          </div>
+                          <span class="cs-airport-code">JKTC</span>
+                        </li>
+                        <li>
+                          <div class="cs-option-airport-city">
+                            <i class="fas fa-city"></i>
+                            <div>
+                              <b>Yogyakarta, Indonesia</b>
+                              <span>Yogyakarta</span>
+                            </div>
+                          </div>
+                          <span class="cs-airport-code">JOGC</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <!------------------------ END: CUSTOM SELECT -->
                 </div>
               </div>
             </td>
@@ -124,7 +160,7 @@
                 <span>Berangkat</span>
                 <div class="td-col-value">
                   <i class="fas fa-calendar-alt"></i>
-                  Sabtu, 18 Des 2021
+                  <input type="date" name="departure-date" class="date" />
                 </div>
               </div>
             </td>
@@ -134,19 +170,75 @@
                   <input type="checkbox" name="gohome" value="Go home" />
                   Pulang
                 </label>
-                <!-- <span>Pulang</span> -->
                 <div class="td-col-value">
                   <i class="fas fa-calendar-alt"></i>
-                  Min, 19 Des 2021
+                  <input type="date" name="arrival-date" class="date" />
                 </div>
               </div>
             </td>
             <td>
               <div class="td-col-data">
                 <span>Penumpang & Kelas Kabin</span>
-                <div class="td-col-value">
+                <div id="passenger-and-cabin-text" class="td-col-value">
                   1 penumpang, Ekonomi
                   <i class="fas fa-chevron-down"></i>
+                  <!------------------------ START: PASSENGER AND CABIN -->
+                  <div id="passenger-and-cabin">
+                    <div class="p-a-c-content">
+                      <div>
+                        <div class="pac-content-title">Penumpang</div>
+                        <div class="pac-row">
+                          <div>
+                            Dewasa<br />
+                            <span class="passenger-age">Usia 12+</span>
+                          </div>
+                          <div>
+                            <i class="fas fa-minus"></i>
+                            <span>1</span>
+                            <i class="fas fa-plus"></i>
+                          </div>
+                        </div>
+                        <div class="pac-row">
+                          <div>
+                            Anak<br />
+                            <span class="passenger-age">Usia 2-11</span>
+                          </div>
+                          <div>
+                            <i class="fas fa-minus"></i>
+                            <span>0</span>
+                            <i class="fas fa-plus"></i>
+                          </div>
+                        </div>
+                        <div class="pac-row">
+                          <div>
+                            Bayi<br />
+                            <span class="passenger-age">Di bawah 2</span>
+                          </div>
+                          <div>
+                            <i class="fas fa-minus"></i>
+                            <span>0</span>
+                            <i class="fas fa-plus"></i>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="pac-col-right">
+                        <div class="pac-content-title">Kelas Kabin</div>
+                        <div class="pac-row">
+                          <span>Ekonomi</span>
+                          <i class="fas fa-check"></i>
+                        </div>
+                        <div class="pac-row">Premium Ekonomi</div>
+                        <div class="pac-row">Bisnis</div>
+                        <div class="pac-row">First</div>
+                      </div>
+                    </div>
+                    <div class="p-a-c-footer">
+                      <button onclick="closePassengerAndCabinModal(event)">
+                        SELESAI
+                      </button>
+                    </div>
+                  </div>
+                  <!------------------------ END: PASSENGER AND CABIN -->
                 </div>
               </div>
             </td>

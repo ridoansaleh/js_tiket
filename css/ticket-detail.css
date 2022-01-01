@@ -80,3 +80,69 @@
   border-radius: 4px;
   text-align: center;
 }
+
+.date {
+  position: relative;
+  border-style: hidden;
+}
+
+.date:focus {
+  outline: none;
+}
+
+.date::-webkit-calendar-picker-indicator {
+  position: absolute;
+  left: -40px;
+  width: 100px;
+  background: transparent;
+  z-index: 1;
+}
+
+.passenger-and-cabin-text {
+  position: relative;
+}
+
+#passenger-and-cabin {
+  width: 350px;
+  display: none;
+  position: absolute;
+  right: 0;
+  bottom: -240px;
+  z-index: 1;
+  background-color: #fff;
+  border: 1px solid #8e8888;
+}
+
+.p-a-c-content {
+  display: flex;
+}
+
+.p-a-c-content > div {
+  width: 50%;
+}
+
+.pac-content-title {
+  padding: 4px;
+  border-bottom: 1px solid #d5d0d0;
+}
+
+.pac-row {
+  display: flex;
+  justify-content: space-between;
+  height: 36px;
+  padding: 4px 8px;
+}
+
+.passenger-age {
+  font-size: 12px;
+}
+
+.pac-col-right {
+  border-left: 1px solid #d5d0d0;
+}
+
+.p-a-c-footer {
+  padding: 8px;
+  text-align: right;
+  border-top: 1px solid #d5d0d0;
+}
