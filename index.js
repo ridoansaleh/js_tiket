@@ -33,3 +33,19 @@ const closePassengerAndCabinModal = (e) => {
   e.stopPropagation();
   passengerAndCabin.style.display = "none";
 };
+
+const productElements = ["airplane", "hotel", "to-do", "train", "car", "event"];
+
+const initialSelectedElement = document.getElementById("airplane");
+initialSelectedElement.classList.add("selected-product");
+
+const selectProduct = (productID) => {
+  const selectedElement = document.getElementById(productID);
+  selectedElement.classList.add("selected-product");
+
+  const unselectedElements = productElements.filter((el) => el !== productID);
+  unselectedElements.forEach((el) => {
+    const unselectedElement = document.getElementById(el);
+    unselectedElement.classList.remove("selected-product");
+  });
+};

@@ -11,15 +11,62 @@
   border-top-right-radius: 8px;
 }
 
-.tt-icon-wrapper {
-  margin: 10px;
-  border: 1px solid grey;
-  border-radius: 4px;
-  height: 60px;
-  padding: 5px;
+.tt-left {
+  font-family: "Open Sans";
+  color: #35405a;
 }
 
-.tt-icon {
-  height: 60px;
-  width: 60px;
+.tt-left > h4 {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 41px;
+  margin: 0;
+}
+
+.tt-left > h2 {
+  font-weight: 600;
+  font-size: 35px;
+  margin: 0;
+}
+
+.product {
+  position: relative;
+  margin: 10px;
+  height: 86px;
+  padding: 6px 3px;
+  border: 1px solid #c7d6f5;
+  border-radius: 8px;
+  width: 86px;
+  cursor: pointer;
+}
+
+.product > figure {
+  margin: 0;
+  text-align: center;
+}
+
+.product > img {
+  height: 57px;
+  width: 76px;
+}
+
+.product > figure > figcaption {
+  font-size: 10px;
+  color: #58627a;
+  font-family: "Open Sans";
+  font-weight: 600;
+}
+
+.selected-product {
+  border: 2px solid #0064d2;
+}
+
+.selected-product::after {
+  position: absolute;
+  color: #0064d2;
+  top: 6px;
+  right: 3px;
+  content: "\f058";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
 }
