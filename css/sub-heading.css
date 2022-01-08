@@ -12,14 +12,36 @@
 }
 
 .sh-label-icon {
-  height: 24px;
-  width: 24px;
+  height: 35px;
+  width: 35px;
+  margin-right: 16px;
+  color: #0064d2;
 }
 
 .sh-label {
-  margin: 0 12px;
+  margin: 0;
+  font-family: "Open Sans";
+  font-weight: 600;
+  font-size: 20px;
+  color: #35405a;
+  line-height: 35px;
+}
+
+#sh-last-search {
+  color: #0064d2;
+  text-decoration: none;
+  font-family: "Open Sans";
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 35px;
 }
 
 .sh-bottom {
-  padding: 20px 0;
+  padding-top: 32px;
+}
+
+.sh-bottom > label {
+  font-family: "Open Sans";
+  font-weight: 400;
+  font-size: 14px;
 }

@@ -49,3 +49,36 @@ const selectProduct = (productID) => {
     unselectedElement.classList.remove("selected-product");
   });
 };
+
+// Collect Data
+
+const flightData = {
+  travelType: "Sekali Jalan",
+  departureAirport: "",
+  arrivalAirport: "",
+  departureDate: "",
+  returnDate: "",
+  totalPassenger: {
+    adult: 1,
+    child: 0,
+    baby: 0,
+  },
+  cabinClass: "Ekonomi",
+};
+
+const sekaliJalan = document.getElementById("sekali-jalan");
+const pulangPergi = document.getElementById("pulang-pergi");
+
+if (sekaliJalan.value === flightData.travelType) {
+  sekaliJalan.checked = true;
+} else if (pulangPergi.value === flightData.travelType) {
+  pulangPergi.checked = true;
+}
+
+sekaliJalan.addEventListener("change", (e) => {
+  flightData.travelType = e.target.value;
+});
+
+pulangPergi.addEventListener("change", (e) => {
+  flightData.travelType = e.target.value;
+});
