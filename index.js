@@ -82,3 +82,89 @@ sekaliJalan.addEventListener("change", (e) => {
 pulangPergi.addEventListener("change", (e) => {
   flightData.travelType = e.target.value;
 });
+
+const cityOrAirportList = [
+  {
+    country: "Indonesia",
+    city: "Jakarta",
+    cityCode: "JKTC",
+    airports: [
+      {
+        name: "Halim Perdanakusuma",
+        code: "HLP",
+      },
+      {
+        name: "Soekarno Hatta",
+        code: "CGK",
+      },
+    ],
+  },
+  {
+    country: "Indonesia",
+    city: "Surabaya",
+    cityCode: "SUBC",
+    airports: [
+      {
+        name: "Juanda",
+        code: "SUB",
+      },
+    ],
+  },
+  {
+    country: "Indonesia",
+    city: "Medan",
+    cityCode: "MESC",
+    airports: [
+      {
+        name: "Kuala Namu",
+        code: "KNO",
+      },
+    ],
+  },
+  {
+    country: "Indonesia",
+    city: "Makassar",
+    cityCode: "UPGC",
+    airports: [
+      {
+        name: "Sultan Hasanuddin",
+        code: "UPG",
+      },
+    ],
+  },
+];
+
+const departureAirportList = document.getElementById("departure-airport-list");
+const arrivalAirportList = document.getElementById("arrival-airport-list");
+
+// Initialize custom-select options data
+
+cityOrAirportList.forEach((d) => {
+  let li = document.createElement("li");
+  li.innerHTML = `
+    <div class="cs-option-airport-city">
+      <i class="fas fa-city"></i>
+      <div>
+        <b>${d.city}, ${d.country}</b>
+        <span>${d.city}</span>
+      </div>
+    </div>
+    <span class="cs-airport-code">${d.cityCode}</span>
+  `;
+  departureAirportList.appendChild(li);
+});
+
+cityOrAirportList.forEach((d) => {
+  let li = document.createElement("li");
+  li.innerHTML = `
+    <div class="cs-option-airport-city">
+      <i class="fas fa-city"></i>
+      <div>
+        <b>${d.city}, ${d.country}</b>
+        <span>${d.city}</span>
+      </div>
+    </div>
+    <span class="cs-airport-code">${d.cityCode}</span>
+  `;
+  arrivalAirportList.appendChild(li);
+});

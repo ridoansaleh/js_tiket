@@ -108,7 +108,10 @@
                 <span>Dari</span>
                 <div id="departure-airport" class="td-col-value">
                   <i class="fas fa-plane-departure"></i>
-                  Sultan Mahmud Badaruddin II (PLM)
+                  <input
+                    name="departure-airport"
+                    placeholder="Kota atu bandara"
+                  />
                   <!------------------------ START: CUSTOM SELECT -->
                   <div id="departure-select" class="custom-select">
                     <div class="cs-placeholder">
@@ -120,28 +123,7 @@
                     </div>
                     <div class="cs-options-container">
                       <span class="cs-option-category">Populer</span>
-                      <ul>
-                        <li>
-                          <div class="cs-option-airport-city">
-                            <i class="fas fa-city"></i>
-                            <div>
-                              <b>Jakarta, Indonesia</b>
-                              <span>Jakarta</span>
-                            </div>
-                          </div>
-                          <span class="cs-airport-code">JKTC</span>
-                        </li>
-                        <li>
-                          <div class="cs-option-airport-city">
-                            <i class="fas fa-city"></i>
-                            <div>
-                              <b>Surabaya, Indonesia</b>
-                              <span>Surabaya</span>
-                            </div>
-                          </div>
-                          <span class="cs-airport-code">SUBC</span>
-                        </li>
-                      </ul>
+                      <ul id="departure-airport-list"></ul>
                     </div>
                   </div>
                   <!------------------------ END: CUSTOM SELECT -->
@@ -156,7 +138,7 @@
                 <span>Ke</span>
                 <div id="arrival-airport" class="td-col-value">
                   <i class="fas fa-plane-arrival"></i>
-                  Kuala Namu (KNO)
+                  <input name="arrival-airport" placeholder="Mau ke mana?" />
                   <!------------------------ START: CUSTOM SELECT -->
                   <div id="arrival-select" class="custom-select">
                     <div class="cs-placeholder">
@@ -168,28 +150,7 @@
                     </div>
                     <div class="cs-options-container">
                       <span class="cs-option-category">Populer</span>
-                      <ul>
-                        <li>
-                          <div class="cs-option-airport-city">
-                            <i class="fas fa-city"></i>
-                            <div>
-                              <b>Jakarta, Indonesia</b>
-                              <span>Jakarta</span>
-                            </div>
-                          </div>
-                          <span class="cs-airport-code">JKTC</span>
-                        </li>
-                        <li>
-                          <div class="cs-option-airport-city">
-                            <i class="fas fa-city"></i>
-                            <div>
-                              <b>Yogyakarta, Indonesia</b>
-                              <span>Yogyakarta</span>
-                            </div>
-                          </div>
-                          <span class="cs-airport-code">JOGC</span>
-                        </li>
-                      </ul>
+                      <ul id="arrival-airport-list"></ul>
                     </div>
                   </div>
                   <!------------------------ END: CUSTOM SELECT -->
