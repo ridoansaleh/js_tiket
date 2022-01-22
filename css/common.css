@@ -4,3 +4,32 @@
   margin: auto;
   box-shadow: 5px 5px 50px 5px #8e8888;
 }
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.py-8 {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.pt-8 {
+  padding-top: 8px;
+}
+
+.pl-30 {
+  padding-left: 30px;
+}
