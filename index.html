@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="./css/sub-heading.css" />
     <link rel="stylesheet" href="./css/ticket-detail.css" />
     <link rel="stylesheet" href="./css/ticket-footer.css" />
+    <link rel="stylesheet" href="./css/search-result.css" />
   </head>
   <body>
     <div class="box">
@@ -85,6 +86,7 @@
               id="sekali-jalan"
               name="travel-type"
               value="Sekali Jalan"
+              onchange="checkTravelType('sekali-jalan')"
             />
             Sekali Jalan
           </label>
@@ -94,6 +96,7 @@
               id="pulang-pergi"
               name="travel-type"
               value="Pulang-Pergi"
+              onchange="checkTravelType('pulang-pergi')"
             />
             Pulang-Pergi
           </label>
@@ -111,6 +114,7 @@
                   <input
                     name="departure-airport"
                     placeholder="Kota atu bandara"
+                    oninput="searchDepartureCityOrAirport(event)"
                   />
                   <!------------------------ START: CUSTOM SELECT -->
                   <div id="departure-select" class="custom-select">
@@ -129,7 +133,7 @@
                   <!------------------------ END: CUSTOM SELECT -->
                 </div>
               </div>
-              <div id="exchange-wrapper">
+              <div id="exchange-wrapper" onclick="handleExchangeAirport()">
                 <i class="fas fa-exchange-alt"></i>
               </div>
             </td>
@@ -138,7 +142,11 @@
                 <span>Ke</span>
                 <div id="arrival-airport" class="td-col-value">
                   <i class="fas fa-plane-arrival"></i>
-                  <input name="arrival-airport" placeholder="Mau ke mana?" />
+                  <input
+                    name="arrival-airport"
+                    placeholder="Mau ke mana?"
+                    oninput="searchArrivalCityOrAirport(event)"
+                  />
                   <!------------------------ START: CUSTOM SELECT -->
                   <div id="arrival-select" class="custom-select">
                     <div class="cs-placeholder">
@@ -162,19 +170,19 @@
                 <span>Berangkat</span>
                 <div class="td-col-value">
                   <i class="fas fa-calendar-alt"></i>
-                  <input type="date" name="departure-date" class="date" />
+                  <input type="date" name="departure-date" class="date" oninput="selectDepartureDate(event)" />
                 </div>
               </div>
             </td>
             <td>
               <div class="td-col-data">
                 <label>
-                  <input type="checkbox" name="gohome" value="Go home" />
+                  <input type="checkbox" name="gohome" value="Pulang" onchange="checkGohome('gohome')" />
                   Pulang
                 </label>
                 <div class="td-col-value">
                   <i class="fas fa-calendar-alt"></i>
-                  <input type="date" name="arrival-date" class="date" />
+                  <input type="date" name="return-date" class="date" oninput="selectReturnDate(event)" />
                 </div>
               </div>
             </td>
@@ -182,7 +190,7 @@
               <div class="td-col-data">
                 <span>Penumpang & Kelas Kabin</span>
                 <div id="passenger-and-cabin-text" class="td-col-value">
-                  1 penumpang, Ekonomi
+                  <div id="passenger-and-cabin-result"><span id="total-passenger"></span> penumpang, <span id="selected-cabin"></span></div>
                   <i class="fas fa-chevron-down"></i>
                   <!------------------------ START: PASSENGER AND CABIN -->
                   <div id="passenger-and-cabin">
@@ -191,47 +199,62 @@
                         <div class="pac-content-title">Penumpang</div>
                         <div class="pac-row">
                           <div>
-                            Dewasa<br />
-                            <span class="passenger-age">Usia 12+</span>
+                            <div>Dewasa</div>
+                            <div class="passenger-age">Usia 12+</div>
                           </div>
-                          <div>
-                            <i class="fas fa-minus"></i>
-                            <span>1</span>
-                            <i class="fas fa-plus"></i>
-                          </div>
-                        </div>
-                        <div class="pac-row">
-                          <div>
-                            Anak<br />
-                            <span class="passenger-age">Usia 2-11</span>
-                          </div>
-                          <div>
-                            <i class="fas fa-minus"></i>
-                            <span>0</span>
-                            <i class="fas fa-plus"></i>
+                          <div class="pac-counter">
+                            <i class="fas fa-minus" onclick="decreasePassenger('adult', 'total-adult')"></i>
+                            <span id="total-adult">1</span>
+                            <i class="fas fa-plus" onclick="increasePassenger('adult', 'total-adult')"></i>
                           </div>
                         </div>
                         <div class="pac-row">
                           <div>
-                            Bayi<br />
+                            <div>Anak</div>
+                            <div class="passenger-age">Usia 2-11</div>
+                          </div>
+                          <div class="pac-counter">
+                            <i class="fas fa-minus" onclick="decreasePassenger('child', 'total-child')"></i>
+                            <span id="total-child">0</span>
+                            <i class="fas fa-plus" onclick="increasePassenger('child', 'total-child')"></i>
+                          </div>
+                        </div>
+                        <div class="pac-row">
+                          <div>
+                            <div>Bayi</div>
                             <span class="passenger-age">Di bawah 2</span>
                           </div>
-                          <div>
-                            <i class="fas fa-minus"></i>
-                            <span>0</span>
-                            <i class="fas fa-plus"></i>
+                          <div class="pac-counter">
+                            <i class="fas fa-minus" onclick="decreasePassenger('baby', 'total-baby')"></i>
+                            <span id="total-baby">0</span>
+                            <i class="fas fa-plus" onclick="increasePassenger('baby', 'total-baby')"></i>
                           </div>
                         </div>
                       </div>
                       <div class="pac-col-right">
-                        <div class="pac-content-title">Kelas Kabin</div>
-                        <div class="pac-row">
-                          <span>Ekonomi</span>
-                          <i class="fas fa-check"></i>
+                        <div class="pac-content-title">
+                          Kelas Kabin
+                          <i
+                            class="fas fa-times fa-lg"
+                            onclick="closePassengerAndCabinModal(event)"
+                          ></i>
                         </div>
-                        <div class="pac-row">Premium Ekonomi</div>
-                        <div class="pac-row">Bisnis</div>
-                        <div class="pac-row">First</div>
+                        <div class="pac-row" onclick="selectCabin('Ekonomi', 'economy-cabin')">
+                          <span>Ekonomi</span>
+                          <div id="economy-cabin"></div>
+                        </div>
+                        <div class="pac-row" onclick="selectCabin('Premium Ekonomi', 'premium-economy-cabin')">
+                          <span>Premium Ekonomi</span>
+                          <div id="premium-economy-cabin"></div>
+                        </div>
+                        <div class="pac-row" onclick="selectCabin('Bisnis', 'bussines-cabin')">
+                          <span>Bisnis</span>
+                          <div id="bussines-cabin"></div>
+                        </div>
+                        <div class="pac-row" onclick="selectCabin('First', 'first-cabin')">
+                          <span>First</span>
+                          <div id="first-cabin"></div>
+                        </div>
                       </div>
                     </div>
                     <div class="p-a-c-footer">
@@ -255,6 +278,7 @@
               type="checkbox"
               name="flexi-ticket"
               value="Tampilkan tiket flexi"
+              onchange="checkFlexiTicket('flexi-ticket')"
             />
             Tampilkan tiket FLEXI
           </label>
@@ -263,10 +287,19 @@
             <a href="">detail</a>.
           </span>
         </div>
-        <button id="search-flight-btn">CARI PENERBANGAN</button>
+        <button id="search-flight-btn" onclick="searchFlights()">CARI PENERBANGAN</button>
       </div>
-
-      <script src="./index.js"></script>
     </div>
+
+    <div class="search-result">
+      <i
+        id="search-result-close"
+        class="fas fa-times fa-lg"
+        onclick="closeSearchResult()"
+      ></i>
+      <pre id="result-code"></pre>
+    </div>
+
+    <script src="./index.js"></script>
   </body>
 </html>
