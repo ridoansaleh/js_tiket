@@ -486,8 +486,6 @@ const selectCabin = (cabin, elementID) => {
   selectedCabinTextElement.innerText = flightData.cabinClass
 }
 
-const returnDate = document.querySelector("input[name='return-date']")
-
 const selectDepartureDate = (e) => {
   const value = e.target.value
   flightData.departureDate = value
