@@ -142,6 +142,8 @@ input[name="arrival-airport"]:focus {
 
 .cs-options-container li:hover {
   cursor: pointer;
+  /* apply this later */
+  /* background-color: #f2f8ff; */ 
 }
 
 .cs-options-container > ul > li:not(:last-child) {
@@ -212,6 +214,12 @@ input[name="arrival-airport"]:focus {
 
 .date:focus {
   outline: none;
+}
+
+.date:disabled {
+  color: #c6cbda;
+  background-color: #fff;
+  cursor: not-allowed;
 }
 
 .date::-webkit-calendar-picker-indicator {
