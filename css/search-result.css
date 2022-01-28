@@ -10,10 +10,9 @@
 }
 
 .search-result pre {
-    font-family: 'Open Sans';
-    font-weight: 400;
     font-size: 14px;
     color: #35405a;
+    line-height: 20px;
 }
 
 #search-result-close {
