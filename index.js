@@ -337,7 +337,7 @@ const searchDepartureCityOrAirport = (e) => {
       `;
     } else {
       li.addEventListener("click", (evt) =>
-        handleSelectDepartureAirport(evt, d.city + " (" + d.cityCode + ")")
+        handleSelectDepartureAirport(evt, d.airports[0].name + " (" + d.airports[0].code + ")")
       );
       li.innerHTML = `
         <div class="cs-option-airport-city">
@@ -432,7 +432,7 @@ const searchArrivalCityOrAirport = (e) => {
       `;
     } else {
       li.addEventListener("click", (evt) =>
-        handleSelectArrivalAirport(evt, d.city + " (" + d.cityCode + ")")
+        handleSelectArrivalAirport(evt, d.airports[0].name + " (" + d.airports[0].code + ")")
       );
       li.innerHTML = `
         <div class="cs-option-airport-city">
