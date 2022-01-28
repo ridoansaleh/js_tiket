@@ -25,17 +25,19 @@
 
 ## Functionality Improvements
 
-- show border in product box on hover
+- show border in product box on hover [Done]
 
-- modify airport and city list, so user can search airport instead of city  
+- modify airport and city list, so user can search airport instead of city [Done]
   Example: "Medan" => "Medan (MESC)" in the input  
   It should be "Kuala Namu (KNO)"
 
-- change font color of disabled date
+- change font color of disabled date [Done]
+
+- disable or enable decrease / increase button in passenger & cabin popup in certain condition
 
 - put overlay on focus in the big box
 
-- add accessibilty for product box from keyboard
+- add accessibilty for product box from keyboard [Done]
 
 ## Engineering Best Practices
 

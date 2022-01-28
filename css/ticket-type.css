@@ -31,13 +31,21 @@
 
 .product {
   position: relative;
-  margin: 10px;
-  height: 86px;
+  width: 86px;
+  max-height: 86px;
   padding: 6px 3px;
   border: 1px solid #c7d6f5;
   border-radius: 8px;
-  width: 86px;
+  margin: 10px 10px 0;
   cursor: pointer;
+}
+
+.product:last-child {
+  margin: 10px 0 0 10px;
+}
+
+.product:hover {
+  border: 2px solid #0064d2;
 }
 
 .product > figure {
